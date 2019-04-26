@@ -25,13 +25,11 @@ export class UsuariosLista {
     }
     //Obtener lista de usuarios
     public getLista(){
-        return this.lista;
+        return this.lista.filter(usuario => usuario.nombre !== 'sin-nombre');
     }
 
     public getUsuario(id: string){
-        return this.lista.find(usuario => {
-            return usuario.id === id;
-        });
+        return this.lista.find(usuario =>   usuario.id === id);
     }
     //Obtenr usuario en una sala en particular
     public getUsuariosEnSala(sala: string){
